@@ -13,12 +13,12 @@ This script assumes, as is best practice for AD/365 Syncing, that the UPN of the
 It's also possible to get input from a CSV file to process multiple users. 
 
 Example 1:
-> Connect-MSOLService
-> Import-CSV C:\path\UserFile.CSV | ForEach { C:\path\Update-365ImmutableID.ps1 -Username $_.Username -FQDN "domain.com"}
+* Connect-MSOLService
+* Import-CSV C:\path\UserFile.CSV | ForEach { C:\path\Update-365ImmutableID.ps1 -Username $__.Username -FQDN "domain.com"}
 
 or Example 2:
-> Connect-MSOLService
-> Import-CSV C:\path\UserFile.CSV | ForEach { C:\path\Update-365ImmutableID.ps1 -Username $_.Username -FQDN $_.FQDN}
+* Connect-MSOLService
+* Import-CSV C:\path\UserFile.CSV | ForEach { C:\path\Update-365ImmutableID.ps1 -Username $__.Username -FQDN $__.FQDN}
 
 Note: the script will need to have the Get-Credential command Remmed out.
 
