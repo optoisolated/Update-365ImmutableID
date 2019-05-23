@@ -15,8 +15,8 @@ It's also possible to get input from a CSV file to process multiple users.
 Example 1:
 > Connect-MSOLService
 > Import-CSV C:\path\UserFile.CSV | ForEach { C:\path\Update-365ImmutableID.ps1 -Username $_.Username -FQDN "domain.com"}
-or
-Example 2:
+
+or Example 2:
 > Connect-MSOLService
 > Import-CSV C:\path\UserFile.CSV | ForEach { C:\path\Update-365ImmutableID.ps1 -Username $_.Username -FQDN $_.FQDN}
 
