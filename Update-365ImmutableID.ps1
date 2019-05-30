@@ -14,7 +14,7 @@ $ADUser = $Username
 $365User = "$Username@$FQDN"
 
 Write-Host "Generating GUID from AD User '$ADUser'"
-$ADGUID = (Get-ADUser $ADUser).ObjectGUID
+[GUID]$ADGUID = (Get-ADUser $ADUser).ObjectGUID
 
 If ($ADGUID -ne $null) {
     $ImmutableID = [System.Convert]::ToBase64String($ADGUID.ToByteArray())
