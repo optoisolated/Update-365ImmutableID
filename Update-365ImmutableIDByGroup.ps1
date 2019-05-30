@@ -28,10 +28,10 @@ ForEach ($User in $ADGroup) {
       Start-Sleep -s 2
       
       #Check that the Immutable ID updated successfully.
-      Get-MsolUser -UserPrincipalName $365User | Select ImmutableID
+      $IID = Get-MsolUser -UserPrincipalName $365User | Select ImmutableID
       if ($IID.ImmutableID -eq $ImmutableID) {
         Write-Host "O365 User '$365User' Immutable ID Updated Successfully."
-      } ELSE { 
+      } Else { 
         Write-Host "O365 User '$365User' Immutable ID Update Failed!"
       }
   } Else {
